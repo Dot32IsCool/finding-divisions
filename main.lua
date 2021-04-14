@@ -46,40 +46,10 @@ end
 function love.keypressed(k)
 	result = {}
 	i = 1
-
-	if k == "0" then
-		value = value*10 + 0
-	end
-	if k == "1" then
-		value = value*10 + 1
-	end
-	if k == "2" then
-		value = value*10 + 2
-	end
-	if k == "3" then
-		value = value*10 + 3
-	end
-	if k == "4" then
-		value = value*10 + 4
-	end
-	if k == "5" then
-		value = value*10 + 5
-	end
-	if k == "6" then
-		value = value*10 + 6
-	end
-	if k == "7" then
-		value = value*10 + 7
-	end
-	if k == "8" then
-		value = value*10 + 8
-	end
-	if k == "9" then
-		value = value*10 + 9
-	end
-
 	if k =="backspace" then
 		value = math.floor(value/10)
+	else
+		value = value*10 + k
 	end
 end
 
