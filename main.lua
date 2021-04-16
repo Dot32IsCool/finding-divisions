@@ -26,10 +26,11 @@ function love.update()
 end
 
 function love.draw()
-	love.graphics.setColour(0.1,0.1,0.1)
+	love.graphics.setColour(0.2,0.2,0.2)
 	love.graphics.rectangle("fill", 0, 0, 800, 200)
+	love.graphics.rectangle("fill", 0,590, i/value*800, 10)
 	love.graphics.setFont(font.value)
-	love.graphics.setColour(value,value,value)
+	love.graphics.setColour(value+0.2,value+0.2,value+0.2)
 	love.graphics.print(value, 50, 50)
 
 	love.graphics.setFont(font.result)
@@ -39,44 +40,14 @@ function love.draw()
 		--love.graphics.print(varToString(result[j]), 50, 220+y)
 	end
 	--love.graphics.print(varToString(result), 50, 220)
-
-	love.graphics.rectangle("fill", 0,590, i/value*800, 10)
 end
 
 function love.keypressed(k)
 	result = {}
 	i = 1
 
-	if k == "0" then
-		value = value*10 + 0
-	end
-	if k == "1" then
-		value = value*10 + 1
-	end
-	if k == "2" then
-		value = value*10 + 2
-	end
-	if k == "3" then
-		value = value*10 + 3
-	end
-	if k == "4" then
-		value = value*10 + 4
-	end
-	if k == "5" then
-		value = value*10 + 5
-	end
-	if k == "6" then
-		value = value*10 + 6
-	end
-	if k == "7" then
-		value = value*10 + 7
-	end
-	if k == "8" then
-		value = value*10 + 8
-	end
-	if k == "9" then
-		value = value*10 + 9
-	end
+	local n = (tonumber(k) and tonumber(k)) or 0
+	value = value*10 + n
 
 	if k =="backspace" then
 		value = math.floor(value/10)
