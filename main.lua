@@ -46,7 +46,7 @@ function love.keypressed(k)
 	result = {}
 	i = 1
 
-	local n = (tonumber(k) and tonumber(k)) or 0
+	local n = tonumber(k) or 0
 	value = value*10 + n
 
 	if k =="backspace" then
